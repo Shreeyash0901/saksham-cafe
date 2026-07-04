@@ -1,13 +1,15 @@
 // Replace with the café's actual WhatsApp number, country code first, no + or spaces.
 // e.g. India number 98765 43210 -> "919876543210"
-export const CAFE_WHATSAPP_NUMBER = "918766436683";
+export const CAFE_WHATSAPP_NUMBER = "919673959011";
 
 /**
  * Builds a formatted order message and opens WhatsApp (web or app)
  * with the message pre-filled, ready for the customer to hit send.
  *
- * items: [{ nameEn, qty, price }]
- * customer: { name, phone, note }
+ * items:    [{ nameEn, qty, price }]
+ * customer: { name, phone, orderType, address, note }
+ *   - orderType: "Home Delivery" | "Self Pickup"
+ *   - address:   delivery address string, or null/undefined for pickup
  */
 export function sendOrderViaWhatsApp(items, customer, total) {
   const lines = [
@@ -21,6 +23,8 @@ export function sendOrderViaWhatsApp(items, customer, total) {
     "",
     `Name: ${customer.name}`,
     `Phone: ${customer.phone}`,
+    customer.orderType ? `Order Type: ${customer.orderType}` : null,
+    customer.address ? `Delivery Address: ${customer.address}` : null,
     customer.note ? `Note: ${customer.note}` : null,
   ].filter(Boolean);
 

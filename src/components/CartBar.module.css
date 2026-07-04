@@ -1,33 +1,80 @@
+/* CartBar.module.css
+   Note: you didn't share this file's original content, so this is built
+   fresh to match the ink/gold theme. If you already have a version with
+   different class names, just port these colors/values over instead. */
+
 .cartBar {
   position: fixed;
-  bottom: 20px;
   left: 50%;
+  bottom: 20px;
   transform: translateX(-50%);
   z-index: 40;
+
   display: flex;
   align-items: center;
   gap: 14px;
-  background: #2B2119;
-  color: #FBF3E7;
-  border: none;
-  border-radius: 30px;
-  padding: 14px 22px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  padding: 12px 20px;
+
+  background: linear-gradient(100deg, var(--gold) 0%, var(--gold-light) 15%, #ffe9ac 45%, var(--gold-light) 65%, var(--gold) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.685);
+  border-radius: 50px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cartBar:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .count {
-  opacity: 0.85;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(251, 243, 226, 0.7);
+  white-space: nowrap;
 }
 
 .total {
+  font-size: 0.95rem;
   font-weight: 800;
-  color: #E8A33D;
+  color: var(--color-gold);
+  white-space: nowrap;
 }
 
 .cta {
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-  padding-left: 14px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a1410;
+  background: linear-gradient(180deg, #e8cf83 0%, var(--color-gold) 100%);
+  padding: 8px 14px;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .cartBar {
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+    transform: none;
+    width: auto;
+    justify-content: space-between;
+  }
+
+  .cartBar:hover {
+    transform: translateY(-2px);
+  }
+
+  .count {
+    display: none; /* not enough room next to total + CTA on small phones */
+  }
 }

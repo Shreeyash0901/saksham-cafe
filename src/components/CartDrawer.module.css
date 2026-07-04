@@ -1,7 +1,8 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 252, 249, 0.514);
+  backdrop-filter: blur(3px);
   z-index: 50;
   display: flex;
   justify-content: flex-end;
@@ -10,7 +11,8 @@
 .drawer {
   width: min(420px, 100%);
   height: 100%;
-  background: #FBF3E7;
+  background: linear-gradient(100deg, var(--gold) 0%, var(--gold-light) 20%, #ffe9ac 45%, var(--gold-light) 65%, var(--gold) 100%);
+  border-left: 1px solid rgba(201, 162, 39, 0.35);
   padding: 24px;
   overflow-y: auto;
   animation: slideIn 0.3s ease;
@@ -26,20 +28,34 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.2);
 }
 
 .header h3 {
   margin: 0;
-  font-size: 1.3rem;
-  color: #2B2119;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #020201;
 }
 
 .closeBtn {
-  background: none;
-  border: none;
-  font-size: 1.1rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(248, 0, 0, 0.527);
+  background: rgba(248, 0, 0, 0.527);;
+  color: var(--color-gold);
+  font-size: 1rem;
   cursor: pointer;
-  color: #2B2119;
+  transition: background-color 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 0, 0, 0.815);
 }
 
 .itemList {
@@ -50,7 +66,7 @@
 }
 
 .empty {
-  color: #8a7c68;
+  color: rgba(251, 243, 226, 0.349);
   font-size: 0.9rem;
 }
 
@@ -60,49 +76,73 @@
   justify-content: space-between;
   gap: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px dashed #E7DAC4;
+  border-bottom: 1px dashed rgba(201, 162, 39, 0.25);
 }
 
 .itemInfo {
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 0;
 }
 
 .itemName {
-  font-weight: 600;
-  color: #2B2119;
+  font-weight: 700;
+  color: #000000;
   font-size: 0.92rem;
 }
 
 .itemPrice {
   font-size: 0.78rem;
-  color: #8a7c68;
+  color: rgb(48, 139, 48);
 }
 
 .qtyControls {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
+}
+
+.qtyControls span {
+  color: #000000;
+  font-weight: 700;
+  min-width: 14px;
+  text-align: center;
 }
 
 .qtyControls button {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  border: 1px solid #E7DAC4;
-  background: #fff;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  background: rgb(160, 152, 152);
+  color: var(--color-gold);
   cursor: pointer;
   font-size: 1rem;
   line-height: 1;
+  transition: background-color 0.2s ease;
+}
+
+.qtyControls button:hover {
+   background: rgb(160, 152, 152);
 }
 
 .removeBtn {
-  background: none;
-  border: none;
+   width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  background: rgb(160, 152, 152);
+  color: var(--color-gold);
   cursor: pointer;
-  font-size: 0.9rem;
-  opacity: 0.6;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background-color 0.2s ease;
+}
+
+.removeBtn:hover {
+  opacity: 0.9;
 }
 
 .totalRow {
@@ -110,12 +150,48 @@
   justify-content: space-between;
   font-weight: 800;
   font-size: 1.05rem;
-  color: #2B2119;
+  color: #000000;
   padding: 12px 0;
-  border-top: 1px solid #E7DAC4;
+  border-top: 1px solid rgba(201, 162, 39, 0.2);
   margin-bottom: 16px;
 }
 
+/* ---- Delivery / pickup toggle ---- */
+.toggleRow {
+  display: flex;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 6px;
+  padding: 4px;
+  margin-bottom: 14px;
+}
+
+.toggleBtn {
+  flex: 1;
+  padding: 9px 10px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #cdbfa4;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.toggleBtn:hover {
+  color: var(--color-gold);
+}
+
+.toggleActive {
+  color: #1a1410;
+  background: linear-gradient(180deg, #e8cf83 0%, var(--color-gold) 100%);
+}
+
+/* ---- Form ---- */
 .form {
   display: flex;
   flex-direction: column;
@@ -123,44 +199,105 @@
   margin-bottom: 16px;
 }
 
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .form input,
 .form textarea {
   padding: 10px 12px;
-  border: 1px solid #E7DAC4;
+  border: 1px solid rgba(201, 162, 39, 0.3);
   border-radius: 6px;
   font-size: 0.9rem;
   font-family: inherit;
-  background: #fff;
-  color: #2B2119;
+  background: rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: rgb(236, 233, 226);
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.2);
+}
+
+.error {
+  font-size: 0.7rem;
+  color: #e08a6b;
 }
 
 .primaryBtn {
   width: 100%;
   padding: 13px;
-  border: none;
-  border-radius: 6px;
-  background: #2F7A4D;
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.95rem;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  background: linear-gradient(100deg, var(--gold) 0%, var(--gold-light) 30%, #f0b30edc 45%, var(--gold-light) 65%, var(--gold) 100%);
+  color: #000000;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.primaryBtn:hover:not(:disabled) {
+  filter: brightness(1.06);
 }
 
 .primaryBtn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 .secondaryBtn {
   padding: 10px 16px;
-  border: 1px solid #2B2119;
+  border: 1px solid rgba(201, 162, 39, 0.4);
   border-radius: 6px;
   background: transparent;
+  color: var(--color-gold);
   cursor: pointer;
 }
 
 .confirmation {
   text-align: center;
   padding: 30px 10px;
-  color: #2B2119;
+  color: #fbf3e2;
+}
+
+.confirmation p {
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* ---- Mobile: bottom sheet instead of a right-side drawer ---- */
+@media (max-width: 560px) {
+  .overlay {
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .drawer {
+    width: 100%;
+    height: auto;
+    max-height: 92vh;
+    border-left: none;
+    border-top: 1px solid rgba(201, 162, 39, 0.35);
+    border-radius: 14px 14px 0 0;
+    animation: slideUp 0.3s ease;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
 }
