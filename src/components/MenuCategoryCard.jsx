@@ -20,13 +20,26 @@ import AddToOrderButton from "./AddToOrderButton";
 
 // Elegant color set standing in for the reference photo's colored bars,
 // kept in the same champagne/luxury tonal family (deep, muted, not neon).
+
+
+
+
+
+// To change color of header of menu category card, you can modify the HEADER_COLORS array. 
+// Each color is defined as a linear gradient. You can add or remove colors from this array to customize the header colors for different categories.
+//  The colorForLabel function uses this array to assign a color based on the category label, ensuring that each category consistently gets the same color
+//  across renders and filters.
+
+
+
+
 const HEADER_COLORS = [
-  "linear-gradient(135deg, #C9A84C, #B8923A)", // gold (brand)
-  "linear-gradient(135deg, #3F7A5E, #2F6B4F)", // bottle green
-  "linear-gradient(135deg, #C1552C, #A6431F)", // terracotta
+  // "linear-gradient(135deg, #C9A84C, #B8923A)", // gold (brand)
+  // "linear-gradient(135deg, #3F7A5E, #2F6B4F)", // bottle green
+  // "linear-gradient(135deg, #C1552C, #A6431F)", // terracotta
   "linear-gradient(135deg, #6B3B58, #55293F)", // deep plum
-  "linear-gradient(135deg, #355070, #29405A)", // slate blue
-  "linear-gradient(135deg, #5B3A29, #47281B)", // espresso
+  // "linear-gradient(135deg, #355070, #29405A)", // slate blue
+  // "linear-gradient(135deg, #5B3A29, #47281B)", // espresso
 ];
 
 // Deterministic color per category, based on its label, so a given

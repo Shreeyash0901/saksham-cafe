@@ -7,7 +7,9 @@ import styles from "../pages/Menu.module.css";
 /**
  * <Menu />
  * Fully self-contained, drop-in restaurant menu component.
- * Now bilingual — every label and item name is shown as "English / हिंदी".
+ * Bilingual — every label and item name is shown as "English / हिंदी".
+ * Royal ink & gold theme: tab bar reads as a stamped gold plaque,
+ * pill row as a recessed panel one level quieter than the tab bar.
  *
  * Props (all optional):
  *  - data:      menu data object, same shape as menuData.js (default: menuData)
@@ -67,39 +69,45 @@ export default function Menu({
       {showTabs && (
         <div className={styles.tabBar}>
           <button
-            className={`${styles.tabButton} ${activeTab === "all" && !activeCat ? styles.active : ""}`}
+            className={`${styles.tabButton} ${
+              activeTab === "all" && !activeCat ? styles.active : ""
+            }`}
             onClick={() => handleTabClick("all")}
           >
-            ALL ITEMS सभी आइटम
+            ALL ITEMS
+            <span className={styles.hi}>सभी आइटम</span>
           </button>
           {tabs.map((tab) => (
             <button
               key={tab.key}
-              className={`${styles.tabButton} ${activeTab === tab.key && !activeCat ? styles.active : ""}`}
+              className={`${styles.tabButton} ${
+                activeTab === tab.key && !activeCat ? styles.active : ""
+              }`}
               onClick={() => handleTabClick(tab.key)}
             >
-              {tab.label.en.toUpperCase()}  {tab.label.hi}
+              {tab.label.en.toUpperCase()}
+              <span className={styles.hi}>{tab.label.hi}</span>
             </button>
           ))}
         </div>
       )}
 
       <div className={styles.pillRow}>
-  {tabCats.map((key) => {
-    const cat = data[key];
-    const isActive = activeCat === key;
-    return (
-      <button
-        key={key}
-        className={`${styles.pill} ${isActive ? styles.active : ""}`}
-        onClick={() => handlePillClick(key)}
-      >
-        <span className={styles.pillIconWrap}>{cat.icon}</span>
-        <span>{cat.label.en}</span>
-      </button>
-    );
-  })}
-</div>
+        {tabCats.map((key) => {
+          const cat = data[key];
+          const isActive = activeCat === key;
+          return (
+            <button
+              key={key}
+              className={`${styles.pill} ${isActive ? styles.active : ""}`}
+              onClick={() => handlePillClick(key)}
+            >
+              <span className={styles.pillIconWrap}>{cat.icon}</span>
+              <span>{cat.label.en}</span>
+            </button>
+          );
+        })}
+      </div>
 
       <div className={styles.menuGrid}>
         {visibleCats.map((key) => (
