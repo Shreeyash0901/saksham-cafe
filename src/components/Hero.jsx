@@ -1,11 +1,25 @@
 import "./Hero.css";
 import { Link } from "react-router-dom";
-import { NAV_LINKS } from '../data';
+
 export default function Hero() {
   return (
     <section id="home" className="hero">
 
-      <div className="hero-overlay"></div>
+      <div className="hero-blobs">
+        <div className="hero-blob b1"></div>
+        <div className="hero-blob b2"></div>
+        <div className="hero-blob b3"></div>
+      </div>
+
+      <div className="hero-petals">
+        <span className="petal"></span>
+        <span className="petal"></span>
+        <span className="petal"></span>
+        <span className="petal"></span>
+        <span className="petal"></span>
+        <span className="petal"></span>
+        <span className="petal"></span>
+      </div>
 
       <div className="hero-content">
 
@@ -14,28 +28,25 @@ export default function Hero() {
         </p>
 
         <h1 className="hero-title">
-          New Vatika
+          Saksham
         </h1>
 
         <h2 className="hero-title-outline">
-          Café
+          Cafe
         </h2>
 
         <p className="hero-description">
-          Experience handcrafted flavours, premium ambience,
-          and unforgettable moments with every bite.
+          Pure vegetarian comfort food, handcrafted with warmth —
+          served in a space as inviting as it looks.
         </p>
 
         <div className="hero-buttons">
 
-       
-  <Link to="/menu" className="btn-primary">
-    Explore Menu
-  </Link>
+          <Link to="/menu" className="btn-primary">
+            Explore Menu
+          </Link>
 
-          
-
-          <Link to="/contact" className="btn-primary">
+          <Link to="/contact" className="btn-secondary">
             Book Table
           </Link>
 
@@ -50,7 +61,7 @@ export default function Hero() {
 
           <div className="stat">
             <h3>100%</h3>
-            <p>Vegetarian</p>
+            <p>Pure Veg</p>
           </div>
 
           <div className="stat">

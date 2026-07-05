@@ -8,33 +8,37 @@ export default function Contact() {
 
         <div className="contact-header">
           <p className="contact-subtitle">Visit Us</p>
-          <h1>Contact New Vatika Café</h1>
+
+          <h1>SAKSHAM Café</h1>
+
           <p>
-            We'd love to welcome you. Visit us for delicious food,
-            refreshing beverages, and a warm atmosphere.
+            Experience delicious pure vegetarian food, refreshing beverages,
+            and a cozy atmosphere with your friends and family.
           </p>
         </div>
 
         <div className="contact-grid">
 
+          {/* Address */}
           <div className="contact-card">
             <FaMapMarkerAlt className="contact-icon" />
+
             <h3>Our Location</h3>
 
             <p>
-              New Mondha,
+              Adarsh College - Akola Bypass Road,
               <br />
-              In Front of Hanuman Mandir,
+              Mauli Nagar,
               <br />
-              Bhatt Colony,
+              Ramakrishna Nagar,
               <br />
-              Siddharth Nagar,
+              Balsond,
               <br />
               Hingoli, Maharashtra 431513
             </p>
 
             <a
-              href="https://maps.app.goo.gl/o7dbJvFtudagA2u17"
+              href="https://maps.google.com/?q=SAKSHAM+Cafe+Hingoli"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-btn"
@@ -43,37 +47,46 @@ export default function Contact() {
             </a>
           </div>
 
+          {/* Phone */}
           <div className="contact-card">
             <FaPhoneAlt className="contact-icon" />
+
             <h3>Call Us</h3>
 
-            <p>+91 96739 59011</p>
+            <p>+91 97672 26000</p>
 
             <a
-              href="tel:+919673959011"
+              href="tel:+919767226000"
               className="contact-btn"
             >
               Call Now
             </a>
           </div>
 
+          {/* Timing */}
           <div className="contact-card">
             <FaClock className="contact-icon" />
+
             <h3>Opening Hours</h3>
 
             <p>
-              Monday - Sunday
+              Monday – Sunday
               <br />
-              8:00 AM – 11:00 PM
+              10:00 AM – 11:00 PM
+            </p>
+
+            <p style={{ marginTop: "10px", color: "#00f5ff" }}>
+              Pure Vegetarian Café
             </p>
           </div>
 
         </div>
 
+        {/* Google Map */}
         <div className="map-section">
           <iframe
-            title="New Vatika Café Location"
-            src="https://www.google.com/maps?q=New+Mondha+Hanuman+Mandir+Hingoli&output=embed"
+            title="SAKSHAM Café Location"
+            src="https://www.google.com/maps?q=SAKSHAM+Cafe+Hingoli&output=embed"
             loading="lazy"
             allowFullScreen
           />

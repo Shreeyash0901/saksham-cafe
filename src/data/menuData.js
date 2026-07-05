@@ -1,4 +1,4 @@
-// Menu data for New Vatika Café
+// Menu data for Saksham Café (Pure Veg)
 // Bilingual version — every category label and item name has English (en)
 // and Hindi (hi) text. Edit prices/items here — this file has zero
 // dependencies and can be imported anywhere (React, Vue, plain JS, a CMS, etc).
@@ -37,7 +37,7 @@ export const menuData = {
       { name: { en: "Schezwan Fried Rice", hi: "सेजवान फ्राइड राइस" }, price: "₹150" },
       { name: { en: "Chilli Garlic Rice", hi: "चिल्ली गार्लिक राइस" }, price: "₹150" },
       { name: { en: "Manchurian Rice", hi: "मंचूरियन राइस" }, price: "₹150" },
-      { name: { en: "Vatika Special Rice", hi: "वाटिका स्पेशल राइस" }, price: "₹210" },
+      { name: { en: "Saksham Special Rice", hi: "सक्षम स्पेशल राइस" }, price: "₹210" },
     ],
   },
   momos: {
@@ -76,7 +76,7 @@ export const menuData = {
       { name: { en: "Schezwan Paneer Pizza", hi: "सेजवान पनीर पिज़्ज़ा" }, price: "₹230/300" },
       { name: { en: "Paneer Chilli Pizza", hi: "पनीर चिल्ली पिज़्ज़ा" }, price: "₹230/300" },
       { name: { en: "Full Topping Pizza", hi: "फुल टॉपिंग पिज़्ज़ा" }, price: "₹230/300" },
-      { name: { en: "Vatika Special Pizza", hi: "वाटिका स्पेशल पिज़्ज़ा" }, price: "₹250/320" },
+      { name: { en: "Saksham Special Pizza", hi: "सक्षम स्पेशल पिज़्ज़ा" }, price: "₹250/320" },
       { name: { en: "Pasta Pizza", hi: "पास्ता पिज़्ज़ा" }, price: "₹230/290" },
       { name: { en: "Momos Pizza", hi: "मोमोज़ पिज़्ज़ा" }, price: "₹230/290" },
     ],
@@ -90,7 +90,7 @@ export const menuData = {
       { name: { en: "Cheese Corn Sandwich", hi: "चीज़ कॉर्न सैंडविच" }, price: "₹80" },
       { name: { en: "Veg / Paneer Tandoori Sandwich", hi: "वेज / पनीर तंदूरी सैंडविच" }, price: "₹80" },
       { name: { en: "Veg Club Sandwich", hi: "वेज क्लब सैंडविच" }, price: "₹100" },
-      { name: { en: "Vatika Special Sandwich", hi: "वाटिका स्पेशल सैंडविच" }, price: "₹140" },
+      { name: { en: "Saksham Special Sandwich", hi: "सक्षम स्पेशल सैंडविच" }, price: "₹140" },
     ],
   },
   burger: {
@@ -101,7 +101,7 @@ export const menuData = {
       { name: { en: "Veg Cheese Burger", hi: "वेज चीज़ बर्गर" }, price: "₹80" },
       { name: { en: "Paneer / Veg Crispy Burger", hi: "पनीर / वेज क्रिस्पी बर्गर" }, price: "₹110/90" },
       { name: { en: "Double Tikki Burger", hi: "डबल टिक्की बर्गर" }, price: "₹100" },
-      { name: { en: "Vatika Special Burger", hi: "वाटिका स्पेशल बर्गर" }, price: "₹130" },
+      { name: { en: "Saksham Special Burger", hi: "सक्षम स्पेशल बर्गर" }, price: "₹130" },
     ],
   },
   fries: {
@@ -120,7 +120,7 @@ export const menuData = {
     items: [
       { name: { en: "White Sauce Pasta", hi: "व्हाइट सॉस पास्ता" }, price: "₹120" },
       { name: { en: "Red Sauce Pasta", hi: "रेड सॉस पास्ता" }, price: "₹120" },
-      { name: { en: "Vatika Special Pasta", hi: "वाटिका स्पेशल पास्ता" }, price: "₹210" },
+      { name: { en: "Saksham Special Pasta", hi: "सक्षम स्पेशल पास्ता" }, price: "₹210" },
     ],
   },
   maggi: {

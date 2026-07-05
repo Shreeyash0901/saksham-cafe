@@ -7,7 +7,7 @@ import App from './App';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/newVatikaCafe">
+    <BrowserRouter >
       <CartProvider>
         <App />
       </CartProvider>
